@@ -1,4 +1,4 @@
-#  Codrix Premium+ — Django Agency Website
+#  Codrix Premium+ - Django Agency Website
 
 **Codrix Premium+** is a modern, full-stack Django web application designed for creative agencies, freelancers, or developers to showcase their services, portfolio, careers, and client contact options.  
 This version was developed as part of a Codrix Solutions practical evaluation, demonstrating advanced Django, TailwindCSS, and UI/UX integration skills.
@@ -107,11 +107,12 @@ DEFAULT_FROM_EMAIL=Codrix <noreply@domain.com>
 CONTACT_TO_EMAIL=hello@domain.com
 
 
-
-Author
+#  Author
 
 Aziz Ahmad
 Full-Stack Developer | AI & Web Engineer
 GitHub: @azizahmad7751
 
 Email: contact.azizahmad7751@gmail.com
+---
+
