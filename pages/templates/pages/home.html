@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Codrix Solutions — Premium+ Agency{% endblock %}
+{% block content %}
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-brand-100 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950"></div>
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-10 md:pt-28 md:pb-16">
+    <span class="badge">Remote-first • Available</span>
+    <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+      Software that helps you <span class="text-brand-600">win</span>.
+    </h1>
+    <p class="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
+      We design and build fast, accessible, and secure products for startups and enterprises.
+    </p>
+    <div class="mt-8 flex gap-3">
+      <a href="/contact/" class="btn-primary">Get a quote</a>
+      <a href="/portfolio/" class="btn-ghost">See our work</a>
+    </div>
+  </div>
+</section>
+
+<section class="py-10 md:py-14">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    {% for s in stats %}
+    <div class="card p-6 text-center">
+      <div class="text-3xl font-bold">{{ s.value }}</div>
+      <div class="mt-2 text-slate-600 dark:text-slate-300 text-sm">{{ s.label }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-semibold">Services</h2>
+    <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300">Full-stack delivery from idea to launch.</p>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for s in services %}
+      <div class="card p-6 hover:shadow-lg transition">
+        <div class="text-2xl">{{ s.icon }}</div>
+        <h3 class="mt-3 font-semibold text-lg">{{ s.title }}</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">{{ s.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:5xl font-semibold">What clients say</h2>
+    <div class="mt-10 grid md:grid-cols-2 gap-6">
+      {% for t in testimonials %}
+      <div class="card p-6">
+        <p class="text-lg">“{{ t.quote }}”</p>
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-300 font-medium">{{ t.name }} — {{ t.role }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center gap-8 opacity-80">
+    {% for logo in logos %}
+      <img src="/static/{{ logo }}" class="h-8 w-auto" alt="Client logo" />
+    {% endfor %}
+  </div>
+</section>
+
+<section class="my-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="card p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-2xl md:text-3xl font-semibold">Have a project in mind?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Get a free estimate in 24 hours.</p>
+      </div>
+      <a href="/contact/" class="btn-primary">Start your project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

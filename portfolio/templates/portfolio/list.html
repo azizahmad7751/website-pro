@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Portfolio — Codrix Solutions{% endblock %}
+{% block content %}
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-3xl md:text-5xl font-semibold">Portfolio</h1>
+    <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300">Recent work that shipped.</p>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for p in projects %}
+      <a href="{% url 'portfolio_detail' p.slug %}" class="card overflow-hidden block group">
+        {% if p.image %}
+          <img src="{{ p.image.url }}" class="h-44 w-full object-cover group-hover:scale-[1.02] transition" alt=""/>
+        {% else %}
+          <img src="/static/portfolio{{ forloop.counter }}.jpg" class="h-44 w-full object-cover group-hover:scale-[1.02] transition" alt=""/>
+        {% endif %}
+        <div class="p-6">
+          <div class="flex gap-2 flex-wrap">
+            {% if p.tag %}<span class="badge">{{ p.tag }}</span>{% endif %}
+          </div>
+          <h3 class="font-semibold text-lg mt-3">{{ p.title }}</h3>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">{{ p.summary|truncatechars:120 }}</p>
+        </div>
+      </a>
+      {% empty %}
+      <p class="text-slate-600 dark:text-slate-300">No projects yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

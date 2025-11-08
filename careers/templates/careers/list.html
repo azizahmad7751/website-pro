@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Careers — Codrix Solutions{% endblock %}
+{% block content %}
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <h1 class="text-3xl md:text-5xl font-semibold">Join the team</h1>
+    <p class="mt-3 text-slate-600 dark:text-slate-300">We work async, with focus on impact.</p>
+    <div class="mt-10 grid gap-6">
+      {% for r in jobs %}
+      <a href="{% url 'job_detail' r.slug %}" class="card p-6 hover:shadow-lg transition block">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg">{{ r.title }}</h3>
+            <p class="mt-1 text-slate-600 dark:text-slate-300">{{ r.location }}</p>
+          </div>
+          <span class="badge">{{ r.type }}</span>
+        </div>
+      </a>
+      {% empty %}
+      <p class="text-slate-600 dark:text-slate-300">No openings at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
