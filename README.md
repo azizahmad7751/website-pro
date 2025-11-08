@@ -107,12 +107,4 @@ DEFAULT_FROM_EMAIL=Codrix <noreply@domain.com>
 CONTACT_TO_EMAIL=hello@domain.com
 
 
-#  Author
-
-Aziz Ahmad
-Full-Stack Developer | AI & Web Engineer
-GitHub: @azizahmad7751
-
-Email: contact.azizahmad7751@gmail.com
----
 
